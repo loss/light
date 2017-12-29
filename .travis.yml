@@ -1,0 +1,22 @@
+# https://travis-ci.org
+
+language:
+  - php
+
+sudo: false
+dist: artful
+
+php:
+  - '7.0'
+  - '7.1'
+  - '7.2'
+  - nightly
+
+script:
+  - phpize
+  - ./configure --enable-light
+  - make
+  - make test
+
+notifications:
+  email: false
